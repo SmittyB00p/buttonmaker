@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>
+    Button
+  </title>
+
+  <style>
+    button {
+      background-color: #f2c33c;
+      font-size: 20px;
+      color: #000;
+      padding: 20px;
+      border-radius: 10px;
+      border-width: 3px;
+      border-style: solid;
+      transition: background-color 0.5s ease;
+    }
+
+    button:hover {
+      background-color: #0000ff;
+      cursor: pointer;
+      font-family: 'Times New Roman', Times, serif;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .showing {
+      display: block;
+      width: 300px;
+      margin-top: 20px;
+      padding: 5px 10px;
+      border-radius: 10px;
+      border-style: solid;
+      background-color: #000;
+      color: #ffffff;
+    }
+  </style>
+</head>
+<body>
+  <button class="click-me">Click Me</button>
+
+  <section class="hidden">
+    <h1>Look what I am learning!!</h1>
+    <p>clicked, a button will reveal this text.</p> 
+    <p>Click again, and the text will hide away!</p>
+  </section>
+
+  <script>
+    const buttonClass = document.querySelector(".click-me");
+
+    buttonClass.addEventListener("click", (e) => {
+      let sectionClass = document.querySelectorAll(".hidden");
+
+      sectionClass.forEach((item) => {
+        item.classList.toggle("hidden");
+      }) 
+    });
+  </script>  
+</body>
+</html>
